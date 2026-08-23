@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: dealforma
+    description: "Raw DealForma data - ~51,000 records across 8 tables"
+    database: biopharma
+    schema: biopharma
+    tables:
+      - name: companies
+        description: "Core company data"
+      - name: funding_rounds
+        description: "Funding events"
+      - name: deals
+        description: "M&A and licensing deals"
+      - name: investors
+        description: "Investor profiles"
+      - name: company_investors
+        description: "Company-investor relationships"
+      - name: company_profiles
+        description: "Company profile data"
+      - name: therapeutic_areas
+        description: "Therapeutic area lookup"
