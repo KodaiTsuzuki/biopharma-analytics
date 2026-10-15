@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: stg_companies
+    columns:
+      - name: company_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_deals
+    columns:
+      - name: deal_id
+        tests:
+          - unique
+          - not_null
+      - name: licensor_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_companies')
+              field: company_id
+
+  - name: stg_therapeutic_areas
+    columns:
+      - name: ta_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_investors
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_funding_rounds
+    columns:
+      - name: funding_id
+        tests:
+          - unique
+          - not_null
