@@ -41,3 +41,9 @@ models:
         tests:
           - unique
           - not_null
+      - name: company_uuid
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_company_profiles')
+              field: uuid
